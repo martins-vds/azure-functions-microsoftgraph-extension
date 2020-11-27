@@ -39,9 +39,9 @@ namespace Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph
 
         private void CreateRootDirectory()
         {
-            if (!Directory.Exists(_options.TokenMapLocation))
+            if (!System.IO.Directory.Exists(_options.TokenMapLocation))
             {
-                Directory.CreateDirectory(_options.TokenMapLocation);
+                System.IO.Directory.CreateDirectory(_options.TokenMapLocation);
             }
         }
 
@@ -69,7 +69,7 @@ namespace Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph
 
         public async Task<SubscriptionEntry[]> GetAllSubscriptionsAsync()
         {
-            var subscriptionPaths = await _fileLock.PerformReadIOAsync<IEnumerable<string>>(_options.TokenMapLocation, Directory.EnumerateFiles);
+            var subscriptionPaths = await _fileLock.PerformReadIOAsync<IEnumerable<string>>(_options.TokenMapLocation, System.IO.Directory.EnumerateFiles);
             var entryTasks = subscriptionPaths.Select(path => this.GetAsyncFromPath(path));
             return await Task.WhenAll(entryTasks);
         }

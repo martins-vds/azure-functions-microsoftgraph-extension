@@ -5,26 +5,26 @@
     <AssemblyName>Microsoft.Azure.WebJobs.Extensions.O365</AssemblyName>
     <RootNamespace>Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph</RootNamespace>
 
-    <PackageId>Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph</PackageId>
+    <PackageId>Martins.Azure.WebJobs.Extensions.MicrosoftGraph</PackageId>
     <Description>This extension adds bindings for Microsoft Graph</Description>
     <MajorVersion>1</MajorVersion>
     <MinorVersion>0</MinorVersion>
     <PatchVersion>0</PatchVersion>
-    <BetaVersion>beta6</BetaVersion>
+    <BetaVersion>beta7</BetaVersion>
     <AssemblyVersion>$(MajorVersion).0.0.0</AssemblyVersion>
-    <Version>$(MajorVersion).$(MinorVersion).$(PatchVersion)-$(BetaVersion)$(VersionSuffix)</Version>
+    <Version>1.0.0-beta7</Version>
     <CommitHash Condition="$(CommitHash) == ''">N/A</CommitHash>
     <InformationalVersion>$(Version) Commit hash: $(CommitHash)</InformationalVersion>    
     
-    <Authors>Microsoft</Authors>
-    <Company>Microsoft</Company>
+    <Authors>Vinny Martins</Authors>
+    <Company></Company>
     <Copyright>© .NET Foundation.  All rights reserved.</Copyright>
     <PackageLicenseUrl>https://go.microsoft.com/fwlink/?linkid=2028464</PackageLicenseUrl>
     <PackageProjectUrl />
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Azure/azure-functions-microsoftgraph-extension</RepositoryUrl>
+    <RepositoryUrl>https://github.com/martins-vds/azure-functions-microsoftgraph-extension</RepositoryUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://github.com/Azure/azure-functions-microsoftgraph-extension</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/martins-vds/azure-functions-microsoftgraph-extension</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../../sign.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
@@ -32,6 +32,8 @@
   <PropertyGroup>
     <DebugType>Full</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Product>Martins.Azure.WebJobs.Extensions.O365</Product>
   </PropertyGroup>
 
   <ItemGroup>
@@ -43,11 +45,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.0" />
-    <PackageReference Include="Microsoft.CodeCoverage" Version="1.0.3">
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.23" />
+    <PackageReference Include="Microsoft.CodeCoverage" Version="16.8.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Graph" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Graph" Version="3.20.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
